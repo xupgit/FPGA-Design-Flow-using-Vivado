@@ -151,19 +151,19 @@ Hover the mouse over **H16** in the Device view window.
 
 *set\_property -dict { PACKAGE\_PIN R14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[0] }];*
 
-​*set\_property -dict { PACKAGE\_PIN P14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[1] }];*
+*set\_property -dict { PACKAGE\_PIN P14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[1] }];*
 
-​*set\_property -dict { PACKAGE\_PIN N16   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[2] }];*
+*set\_property -dict { PACKAGE\_PIN N16   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[2] }];*
 
-​*set\_property -dict { PACKAGE\_PIN M14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[3] }];*
+*set\_property -dict { PACKAGE\_PIN M14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[3] }];*
 
-​*set\_property -dict { PACKAGE\_PIN W14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[4] }];*
+*set\_property -dict { PACKAGE\_PIN W14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[4] }];*
 
-​*set\_property -dict { PACKAGE\_PIN Y14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[5] }];*
+*set\_property -dict { PACKAGE\_PIN Y14   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[5] }];*
 
-​*set\_property -dict { PACKAGE\_PIN T11   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[6] }];*
+*set\_property -dict { PACKAGE\_PIN T11   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[6] }];*
 
-​*set\_property -dict { PACKAGE\_PIN T10   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[7] }];*
+*set\_property -dict { PACKAGE\_PIN T10   IOSTANDARD LVCMOS33 } [get\_ports { led\_pins[7] }];*
 
 
 
@@ -301,7 +301,7 @@ Hover the mouse over **H16** in the Device view window.
    <i>Specifying Input Delays for btn_pin and rst_pin</i>
    </p>
 
-10. Enter the tsu and thd as **0 ns** and Enter the trce\_dly\_max and trce\_dly\_min as **-2.20 ns.** Click **Apply** and then click **Next**.
+10. Enter the tsu and thd as **0 ns** and Enter the trce\_dly\_max and trce\_dly\_min as **-2.25 ns.** Click **Apply** and then click **Next**.
 
 11. There are no Combinatorial Delays identified, click **Next** to proceed.
 
@@ -422,11 +422,9 @@ Hover the mouse over **H16** in the Device view window.
 
    The output path delay can be reduced by placing the register in IOB.
 
-5. Apply the constraint by typing the following two commands in the Tcl console.
+5. Apply the constraint by typing the following command in the Tcl console.
 
-   set\_output\_delay -clock [get\_clocks clk\_pin] -min -add\_delay -2.250 [get\_ports {led\_pins[*]}]
-
-   set\_output\_delay -clock [get\_clocks clk\_pin] -max -add\_delay -2.250 [get\_ports {led\_pins[*]}] 
+   set\_property IOB true  [get\_ports {led\_pins[*]}]
 
 6. Select **File > Constraints > Save**. Click **OK** at the warning message. Click **Yes** to save the project.
 
